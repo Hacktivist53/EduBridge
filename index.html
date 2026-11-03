@@ -1,1 +1,727 @@
-i
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#155eef">
+
+<title>EduBridge | Where Potential Meets Opportunity</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172b4d;
+    line-height: 1.6;
+}
+
+:root {
+    --primary: #155eef;
+    --dark: #12306b;
+    --light: #eaf1ff;
+    --text: #172b4d;
+    --muted: #667085;
+    --white: #ffffff;
+}
+
+/* NAVIGATION */
+
+header {
+    background: var(--white);
+    padding: 16px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.logo span {
+    color: var(--dark);
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+.login-btn {
+    background: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+
+.hero {
+    padding: 85px 7%;
+    background: linear-gradient(120deg, #eaf1ff, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 620px;
+}
+
+.tag {
+    display: inline-block;
+    background: #dce8ff;
+    color: var(--primary);
+    padding: 7px 15px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 13px 23px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-outline {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.hero-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 45px rgba(21,94,239,0.12);
+    width: 300px;
+    min-width: 260px;
+}
+
+.hero-card h3 {
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.hero-card div {
+    padding: 12px;
+    background: #f5f7fb;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 70px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: 32px;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+/* FEATURE CARDS */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 27px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.card a {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* COMMUNITY */
+
+.community {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+}
+
+.community h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.community p {
+    color: #d1dcf5;
+    max-width: 650px;
+    margin: 0 auto 25px;
+}
+
+/* DONATION */
+
+.donation {
+    background: var(--light);
+    text-align: center;
+}
+
+.donation h2 {
+    font-size: 32px;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.donation p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto auto 25px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #0c214a;
+    color: white;
+    padding: 35px 7%;
+    text-align: center;
+}
+
+footer p {
+    color: #bdc9df;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* MOBILE */
+
+@media(max-width: 850px) {
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 25px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.08);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 65px 6%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 550px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+
+    <div class="logo">
+        Edu<span>Bridge.</span>
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <nav id="navigation">
+        <a href="#home">Home</a>
+        <a href="#discover">Discover</a>
+        <a href="#community">Community</a>
+        <a href="#support">Student Support</a>
+        <a href="#about">About</a>
+        <a href="#" class="login-btn" onclick="showMessage('Account registration is coming soon!')">Join EduBridge</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="tag">
+            EDUCATION WITHOUT BOUNDARIES
+        </div>
+
+        <h1>
+            Your future deserves
+            <span>an opportunity.</span>
+        </h1>
+
+        <p>
+            From high school to university and beyond.
+            Discover opportunities, connect with students,
+            access educational resources and find the support
+            you need to achieve your dreams.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#discover" class="btn btn-primary">
+                Explore Opportunities
+            </a>
+
+            <a href="#about" class="btn btn-outline">
+                Our Mission
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <h3>Your journey starts here.</h3>
+
+        <div>🎓 Discover universities</div>
+
+        <div>📚 Explore qualifications</div>
+
+        <div>💰 Find funding opportunities</div>
+
+        <div>🤝 Connect with students</div>
+
+        <div>🚀 Build your future</div>
+
+    </div>
+
+</section>
+
+
+<!-- DISCOVER -->
+
+<section id="discover">
+
+    <div class="section-heading">
+
+        <h2>Explore Your Opportunities</h2>
+
+        <p>
+            Everything you need to take the next step
+            in your educational journey.
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card">
+
+            <div class="icon">🏛️</div>
+
+            <h3>Universities & Colleges</h3>
+
+            <p>
+                Discover higher education institutions,
+                admission requirements and available qualifications.
+            </p>
+
+            <a href="#" onclick="showMessage('University discovery is coming soon!')">
+                Explore institutions →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🎓</div>
+
+            <h3>Courses & Careers</h3>
+
+            <p>
+                Discover qualifications, career paths
+                and the subjects required to pursue them.
+            </p>
+
+            <a href="#" onclick="showMessage('Course discovery is coming soon!')">
+                Explore careers →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">💰</div>
+
+            <h3>Bursaries & Funding</h3>
+
+            <p>
+                Find financial assistance, scholarships,
+                bursaries and educational funding opportunities.
+            </p>
+
+            <a href="#" onclick="showMessage('Funding opportunities are coming soon!')">
+                Find funding →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📝</div>
+
+            <h3>Application Guide</h3>
+
+            <p>
+                Learn how to apply, prepare documents,
+                understand deadlines and complete registration.
+            </p>
+
+            <a href="#" onclick="showMessage('Application guides are coming soon!')">
+                Start applying →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📖</div>
+
+            <h3>Learning Resources</h3>
+
+            <p>
+                Access study materials, tutorials,
+                examination preparation and academic guidance.
+            </p>
+
+            <a href="#" onclick="showMessage('Learning resources are coming soon!')">
+                Start learning →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🧭</div>
+
+            <h3>University Survival Guide</h3>
+
+            <p>
+                Understand university life, academic policies,
+                modules, student support and more.
+            </p>
+
+            <a href="#" onclick="showMessage('University guides are coming soon!')">
+                Learn more →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COMMUNITY -->
+
+<section class="community" id="community">
+
+    <h2>You Don't Have to Walk Alone.</h2>
+
+    <p>
+        Connect with learners, university students,
+        graduates and mentors. Ask questions,
+        share knowledge and grow together.
+        Your community can become your greatest resource.
+    </p>
+
+    <button class="btn btn-primary"
+    onclick="showMessage('The EduBridge community is coming soon!')">
+
+        Join the Community
+
+    </button>
+
+</section>
+
+
+<!-- STUDENT SUPPORT -->
+
+<section class="donation" id="support">
+
+    <h2>One Student. One Opportunity. One Future.</h2>
+
+    <p>
+        Financial difficulties should never be the reason
+        someone abandons their education.
+        We envision a community where generous donors
+        can help students overcome financial barriers
+        and complete their qualifications.
+    </p>
+
+    <button class="btn btn-primary"
+    onclick="showMessage('Student financial assistance is coming soon!')">
+
+        Support a Student
+
+    </button>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-heading">
+
+        <h2>Why EduBridge Exists</h2>
+
+        <p>
+            We believe that every young person deserves
+            access to educational opportunities,
+            regardless of their financial background.
+        </p>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <div class="icon">🌍</div>
+
+            <h3>Accessibility</h3>
+
+            <p>
+                Making educational information accessible
+                to everyone, everywhere.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">❤️</div>
+
+            <h3>Opportunity</h3>
+
+            <p>
+                Connecting people who need assistance
+                with people who can make a difference.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🚀</div>
+
+            <h3>Empowerment</h3>
+
+            <p>
+                Helping the next generation develop,
+                succeed and become future leaders.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>EduBridge.</h2>
+
+    <p>Bridging the gap between potential and opportunity.</p>
+
+    <p>© 2026 EduBridge. Built for a better tomorrow.</p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function toggleMenu() {
+
+    const nav = document.getElementById("navigation");
+
+    nav.classList.toggle("active");
+
+}
+
+
+function showMessage(message) {
+
+    alert(message);
+
+}
+
+
+document.querySelectorAll('nav a').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+        document.getElementById("navigation")
+        .classList.remove("active");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
